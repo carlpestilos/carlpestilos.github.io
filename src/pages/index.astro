@@ -22,7 +22,7 @@ const profilePhoto = "/profile.jpg";
     <!-- Side dot navigation (wide screens only) -->
     <nav id="dot-nav" aria-label="Page sections">
       <a href="#home" class="is-active" aria-label="Home"><span class="dot-label">Home</span></a>
-      <a href="#pipeline" aria-label="Pipeline"><span class="dot-label">Pipeline</span></a>
+      <a href="#pipeline" aria-label="Process"><span class="dot-label">Process</span></a>
       <a href="#experience" aria-label="Experience"><span class="dot-label">Experience</span></a>
       <a href="#skills" aria-label="Skills"><span class="dot-label">Skills</span></a>
       <a href="#education" aria-label="Education"><span class="dot-label">Education</span></a>
@@ -30,6 +30,15 @@ const profilePhoto = "/profile.jpg";
 
     <!-- 1. HERO SECTION -->
     <section id="home" data-stack style="z-index:1" class="hero-pastel-mesh w-full px-6 pt-32 pb-20 text-center flex flex-col items-center">
+
+      <!-- Top toolbar: same sections as the side dots. The side dots only appear once this scrolls out of view. -->
+      <nav id="top-nav" aria-label="Quick navigation">
+        <a href="#home" class="is-active" aria-label="Home"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span class="tb-tip">Home</span></a>
+        <a href="#pipeline" aria-label="Process"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><polyline points="21 3 21 9 15 9"></polyline></svg><span class="tb-tip">Process</span></a>
+        <a href="#experience" aria-label="Experience"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><span class="tb-tip">Experience</span></a>
+        <a href="#skills" aria-label="Skills"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg><span class="tb-tip">Skills</span></a>
+        <a href="#education" aria-label="Education"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg><span class="tb-tip">Education</span></a>
+      </nav>
       <div class="side-deco" style="--ay:35%;--by:85%" aria-hidden="true">
         <div class="deco-pipe"></div>
 
@@ -73,7 +82,7 @@ const profilePhoto = "/profile.jpg";
         <!-- ============ END PROFILE PICTURE ============ -->
 
         <h1 class="text-5xl md:text-[64px] font-bold tracking-tight text-ink mb-6 leading-tight" style="letter-spacing: -0.768px;">Carl Pestilos</h1>
-        <p class="text-xl md:text-2xl mb-10 text-ink font-bold">Senior Accounting Operations Specialist | Workflow Automation</p>
+        <p class="text-xl md:text-2xl mb-10 text-ink font-bold">Senior Accounting Operations Specialist & Workflow Automation</p>
         
         <p class="text-base text-ink-mute max-w-2xl mx-auto mb-12 leading-relaxed">
           Detail-oriented professional specializing in optimizing financial operations for Homeowners Associations (HOAs) and automating complex workflows. Proven track record of mitigating collection fees, liens, and legal actions while preventing significant monthly late fees for clients.
@@ -154,6 +163,7 @@ const profilePhoto = "/profile.jpg";
       <div class="max-w-5xl mx-auto px-6">
 
         <div class="text-center mb-20 max-w-2xl mx-auto">
+          <span class="mx-auto mb-5 flex w-12 h-12 items-center justify-center rounded-full bg-canvas text-primary border border-hairline shadow-sm" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><polyline points="21 3 21 9 15 9"></polyline></svg></span>
           <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4" style="letter-spacing:-0.4px;">
             A system that keeps every property in good standing with its HOA
           </h2>
@@ -169,6 +179,7 @@ const profilePhoto = "/profile.jpg";
         <div class="pipe" id="pipe">
           <div class="spine" aria-hidden="true">
             <div class="spine-fill"></div>
+            <div class="spine-dot"></div>
           </div>
 
           <!-- 1 · REQUEST -->
@@ -373,6 +384,14 @@ hub.<span class="f">collect</span>(data);</pre>
           Work Experience
         </h2>
         
+        <!-- Highlights: shown wherever the floating side cards can't fit -->
+        <div class="hl-strip" aria-label="Highlights">
+          <div class="hl-card"><div class="hl-top"><div class="hl-num">$100k</div><div class="bars down hl-vis"><i style="--h:100%;--i:0"></i><i style="--h:78%;--i:1"></i><i style="--h:55%;--i:2"></i><i style="--h:34%;--i:3"></i><i style="--h:18%;--i:4"></i></div></div><div class="hl-label">late fees prevented per month</div></div>
+          <div class="hl-card"><div class="hl-top"><div class="hl-num">9</div><div class="dots hl-vis"><i class="on"></i><i class="on"></i><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i></div></div><div class="hl-label">person team, up from 2</div></div>
+          <div class="hl-card"><div class="hl-num">7,000+</div><div class="hl-label">documents uploaded in two months</div><div class="bar"><span></span></div></div>
+          <div class="hl-card"><div class="hl-top"><div class="hl-num">1,238</div><div class="bars  hl-vis"><i style="--h:30%;--i:0"></i><i style="--h:46%;--i:1"></i><i style="--h:62%;--i:2"></i><i style="--h:82%;--i:3"></i><i style="--h:100%;--i:4"></i></div></div><div class="hl-label">community members, up from 826</div></div>
+        </div>
+
         <!-- Card 1: Senior Role -->
         <div class="bg-surface-aubergine text-on-primary p-8 md:p-12 rounded-2xl mb-12 card-hover shadow-lg">
           <div class="flex flex-col md:flex-row justify-between md:items-baseline mb-2">
@@ -473,6 +492,12 @@ hub.<span class="f">collect</span>(data);</pre>
           Skills & Capabilities
         </h2>
         
+        <div class="hl-strip odd" aria-label="Highlights">
+          <div class="hl-card"><div class="hl-num">95%</div><div class="hl-label">minimum data entry accuracy</div><div class="bar"><span style="animation:none;width:95%"></span></div></div>
+          <div class="hl-card"><div class="hl-num">80%</div><div class="hl-label">initial check clearance rate</div><div class="bar"><span style="animation:none;width:80%"></span></div></div>
+          <div class="hl-card"><div class="hl-top"><div class="hl-num">4</div><div class="dots hl-vis"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div><div class="hl-label">members mentored into permanent roles</div></div>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-canvas p-8 md:p-12 rounded-2xl border border-hairline shadow-sm">
           <!-- Tech Skills -->
           <div>
@@ -547,6 +572,17 @@ hub.<span class="f">collect</span>(data);</pre>
           <div class="card-head"><span class="traffic"></span>terminal</div>
 <pre><span class="c">$</span> git push
 <span class="g">✓</span> deployed</pre>
+        </div>
+      </div>
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="hl-path" aria-label="How my education connects to my work">
+          <div class="hl-path-title">How it connects</div>
+          <ol>
+            <li><b>2019</b><span>ICT, Programming</span></li>
+            <li><b>2020</b><span>Built first automated workflow tools</span></li>
+            <li><b>2023</b><span>B.S. Biology, Cum Laude</span></li>
+            <li><b>2024</b><span>Joined Darwin Homes in HOA accounting</span></li>
+          </ol>
         </div>
       </div>
       <div class="max-w-5xl mx-auto px-6 pb-24 flex flex-col lg:flex-row gap-12 lg:gap-16">
@@ -666,14 +702,13 @@ hub.<span class="f">collect</span>(data);</pre>
         content: "";
         position: absolute;
         left: 50%;
+        margin-left: -14px;
         top: 0;
-        width: 9px;
-        height: 9px;
-        margin-left: -4.5px;
-        border-radius: 50%;
-        background: #9b5de5;
-        box-shadow: 0 0 12px 4px rgba(155, 93, 229, 0.55);
+        width: 28px;
+        height: 100%;
+        background: radial-gradient(circle at 50% 6px, #9b5de5 0 4px, rgba(155, 93, 229, 0.4) 5px, transparent 15px) no-repeat;
         animation: packet 3.5s linear infinite;
+        will-change: transform;
       }
       @media (prefers-reduced-motion: reduce) {
         .flow-v::after { animation: none; }
@@ -769,18 +804,27 @@ hub.<span class="f">collect</span>(data);</pre>
 
       /* ---------- Side dot navigation ---------- */
       #dot-nav {
-        display: none;
+        display: flex;
         position: fixed;
         right: 18px;
         top: 50%;
-        transform: translateY(-50%);
         z-index: 50;
         flex-direction: column;
         gap: 16px;
+        /* hidden while the top toolbar is on screen */
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-50%) translateX(16px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      #dot-nav.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(-50%) translateX(0);
       }
 
-      @media (min-width: 1100px) {
-        #dot-nav { display: flex; }
+      @media (max-width: 1099px) {
+        #dot-nav { right: 8px; gap: 14px; }
       }
 
       #dot-nav a {
@@ -853,10 +897,10 @@ hub.<span class="f">collect</span>(data);</pre>
         box-sizing: border-box;
         padding: 10px 12px;
         border-radius: 14px;
-        background: rgba(255, 255, 255, 0.72);
+        background: rgba(255, 255, 255, 0.88);
         border: 1px solid rgba(74, 21, 75, 0.12);
         box-shadow: 0 12px 32px rgba(74, 21, 75, 0.1);
-        backdrop-filter: blur(6px);
+        will-change: transform;
         font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
         font-size: 10px;
         line-height: 1.5;
@@ -947,17 +991,24 @@ hub.<span class="f">collect</span>(data);</pre>
       @keyframes spin { to { transform: rotate(360deg); } }
 
       .live {
+        position: relative;
         width: 6px;
         height: 6px;
         margin-left: auto;
         border-radius: 50%;
         background: #22c55e;
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+      }
+      .live::after { /* pulse ring: transform + opacity only, so it never repaints */
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: rgba(34, 197, 94, 0.6);
         animation: pulse 2s ease-out infinite;
       }
       @keyframes pulse {
-        0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
-        100% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+        0% { transform: scale(1); opacity: 0.7; }
+        100% { transform: scale(3.2); opacity: 0; }
       }
 
       /* checklist */
@@ -1003,29 +1054,28 @@ hub.<span class="f">collect</span>(data);</pre>
         width: 2px;
         background: repeating-linear-gradient(to bottom, rgba(74, 21, 75, 0.25) 0 6px, transparent 6px 12px);
       }
-      .deco-pipe::after {
+      .deco-pipe::after { /* the dot travels with a transform, not by animating `top` */
         content: "";
         position: absolute;
-        left: -3px;
+        left: -13px;
         top: 0;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #9b5de5;
-        box-shadow: 0 0 12px 4px rgba(155, 93, 229, 0.55);
+        width: 28px;
+        height: 100%;
+        background: radial-gradient(circle at 50% 6px, #9b5de5 0 4px, rgba(155, 93, 229, 0.4) 5px, transparent 15px) no-repeat;
         animation: packet 6s linear infinite;
+        will-change: transform;
       }
       @keyframes packet {
-        0% { top: 0; opacity: 0; }
+        0% { transform: translateY(0); opacity: 0; }
         10%, 90% { opacity: 1; }
-        100% { top: 100%; opacity: 0; }
+        100% { transform: translateY(100%); opacity: 0; }
       }
 
       @media (prefers-reduced-motion: reduce) {
         .deco-card,
         .bar span,
         .spin,
-        .live,
+        .live::after,
         .deco-pipe::after {
           animation: none;
         }
@@ -1075,6 +1125,8 @@ hub.<span class="f">collect</span>(data);</pre>
       .pipe { position: relative; --p: 0; }
 
       .spine {
+        --p: 0;
+        --sh: 0px;
         position: absolute;
         top: 0; bottom: 80px; /* stops above the closing pill, leaving a gap */
         left: 20px;
@@ -1084,20 +1136,23 @@ hub.<span class="f">collect</span>(data);</pre>
       }
       .spine-fill {
         position: absolute;
-        top: 0; left: 0; width: 100%;
-        height: calc(var(--p) * 100%);
+        top: 0; left: 0; width: 100%; height: 100%;
         border-radius: 9999px;
         background: linear-gradient(to bottom, #4a154b, #b388eb);
+        transform: scaleY(var(--p));
+        transform-origin: top;
+        will-change: transform;
       }
-      .spine-fill::after {
-        content: "";
+      .spine-dot {
         position: absolute;
-        left: 50%; bottom: -6px;
+        left: 50%; top: -6px;
         width: 12px; height: 12px;
         margin-left: -6px;
         border-radius: 50%;
         background: #9b5de5;
         box-shadow: 0 0 14px 5px rgba(155, 93, 229, .55);
+        transform: translateY(calc(var(--p) * var(--sh)));
+        will-change: transform;
       }
 
       .stage { position: relative; display: grid; gap: 20px; padding: 0 0 72px 64px; }
@@ -1153,7 +1208,7 @@ hub.<span class="f">collect</span>(data);</pre>
       .vis-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-weight: 700; }
 
       /* looping animations wait until the stage is reached */
-      .stage:not(.reached) .vis * { animation-play-state: paused !important; }
+      .stage:not(.reached) .vis *, .stage.offscreen .vis * { animation-play-state: paused !important; }
 
       /* 1 request */
       .mails { display: flex; justify-content: space-between; font-size: 18px; margin-bottom: 10px; }
@@ -1242,114 +1297,264 @@ hub.<span class="f">collect</span>(data);</pre>
         .files .new { opacity: 1; }
         .stage-text, .stage-visual { opacity: 1; transition: none; }
       }
+
+      /* ---------- Top toolbar ---------- */
+      #top-nav {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 30;
+        display: flex;
+        gap: 4px;
+        padding: 8px;
+        border-radius: 18px;
+        background: rgba(59, 15, 61, 0.95);
+        box-shadow: 0 10px 30px rgba(74, 21, 75, 0.28);
+      }
+      #top-nav a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        color: #fff;
+        transition: background-color 0.2s ease;
+      }
+      #top-nav a:hover { background: rgba(255, 255, 255, 0.14); }
+      #top-nav a.is-active { background: rgba(255, 255, 255, 0.2); }
+      #top-nav svg { flex-shrink: 0; }
+      .tb-tip {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        transform: translate(-50%, -4px);
+        padding: 4px 10px;
+        border-radius: 9999px;
+        background: #fff;
+        color: #4a154b;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+        box-shadow: 0 6px 16px rgba(74, 21, 75, 0.18);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+      #top-nav a:hover .tb-tip,
+      #top-nav a:focus-visible .tb-tip {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+
+      /* ---------- Sections that are fully covered by the next one stop animating ---------- */
+      .is-covered *,
+      .is-covered *::before,
+      .is-covered *::after {
+        animation-play-state: paused !important;
+      }
+
+      /* ---------- Highlight strips: take the place of the floating side cards where those can't fit ---------- */
+      .hl-strip {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin: -32px 0 48px;
+      }
+      .hl-card,
+      .hl-path {
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(74, 21, 75, 0.12);
+        box-shadow: 0 8px 22px rgba(74, 21, 75, 0.07);
+      }
+      .hl-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
+      .hl-num { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; color: #4a154b; }
+      .hl-label { margin-top: 6px; font-size: 12px; line-height: 1.4; color: #6b5b6e; }
+      .hl-vis { width: 46px; flex-shrink: 0; }
+      .hl-card .bars { height: 28px; }
+      .hl-card .bar { margin-top: 10px; }
+
+      .hl-path { margin: 0 0 40px; padding: 18px; }
+      .hl-path-title { margin-bottom: 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.9px; text-transform: uppercase; color: #6b5b6e; }
+      .hl-path ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 18px 16px; }
+      .hl-path li { position: relative; padding-top: 14px; border-top: 2px dotted rgba(74, 21, 75, 0.3); }
+      .hl-path li::before { content: ""; position: absolute; left: 0; top: -6px; width: 10px; height: 10px; border-radius: 50%; background: #9b5de5; }
+      .hl-path b { display: block; font-size: 18px; color: #4a154b; }
+      .hl-path span { font-size: 12px; line-height: 1.4; color: #6b5b6e; }
+
+      @media (max-width: 639px) {
+        .hl-strip.odd > :last-child { grid-column: 1 / -1; }
+      }
+      @media (min-width: 1440px) {
+        .hl-strip, .hl-path { display: none; }
+      }
     </style>
 
     <script>
+      // Everything is measured once (and again on resize), so the scroll handler
+      // does arithmetic only: no layout reads, no layout-changing writes per frame.
+      const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-stack]'));
+      const bar = document.getElementById('scroll-progress');
+      const dotNav = document.getElementById('dot-nav');
+      const topNav = document.getElementById('top-nav');
+      const dotLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('#dot-nav a'));
+      const topLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('#top-nav a'));
+      const pipe = document.getElementById('pipe');
+      const spine = pipe ? pipe.querySelector<HTMLElement>('.spine') : null;
+      const pipeIndex = sections.findIndex((el) => el.id === 'pipeline');
+      const stages = pipe ? Array.from(pipe.querySelectorAll<HTMLElement>('.stage')) : [];
+
+      let heights: number[] = [];
+      let tops: number[] = [];
+      let docHeight = 0;
+      let spineOffset = 0;
+      let spineHeight = 0;
+      let nodeOffsets: number[] = [];
+
+      let queued = false;
+      let lastActive = -1;
+      let lastP = -1;
+      const reachedState: boolean[] = stages.map(() => false);
+      const coveredState: boolean[] = sections.map(() => false);
+
+      function queue() {
+        if (!queued) {
+          queued = true;
+          requestAnimationFrame(frame);
+        }
+      }
+
       // Sections taller than the screen stay in normal scroll until their bottom
       // edge reaches the bottom of the viewport, then pin, so no text is ever
       // covered before it has been seen. Shorter sections pin at the top.
-      const sections = document.querySelectorAll<HTMLElement>('[data-stack]');
-
-      const updateStickyOffsets = () => {
+      function measure() {
         const vh = window.innerHeight;
-        sections.forEach((el) => {
-          el.style.top = `${Math.min(0, vh - el.offsetHeight)}px`;
+        heights = sections.map((el) => el.offsetHeight);
+        let acc = 0;
+        tops = heights.map((h) => {
+          const t = acc;
+          acc += h;
+          return t;
         });
-      };
+        docHeight = acc;
+        sections.forEach((el, i) => {
+          el.style.top = `${Math.min(0, vh - heights[i])}px`;
+        });
 
-      const ro = new ResizeObserver(updateStickyOffsets);
-      sections.forEach((el) => ro.observe(el));
-      window.addEventListener('resize', updateStickyOffsets);
-      updateStickyOffsets();
+        if (spine && pipeIndex >= 0) {
+          const sr = sections[pipeIndex].getBoundingClientRect();
+          const pr = spine.getBoundingClientRect();
+          spineOffset = pr.top - sr.top;
+          spineHeight = pr.height;
+          spine.style.setProperty('--sh', `${spineHeight}px`);
+          nodeOffsets = stages.map((s) => {
+            const n = s.querySelector('.node')!.getBoundingClientRect();
+            return n.top + n.height / 2 - sr.top;
+          });
+        }
+        lastP = -1;
+        queue();
+      }
 
-      // ---------- Progress bar + dot navigation ----------
-      const bar = document.getElementById('scroll-progress');
-      const navLinks = document.querySelectorAll<HTMLAnchorElement>('#dot-nav a');
+      function frame() {
+        queued = false;
+        if (!tops.length) return;
 
-      // Where a section naturally starts in the page (ignores the sticky shift)
-      const naturalTop = (index: number) => {
-        let top = 0;
-        for (let i = 0; i < index; i++) top += sections[i].offsetHeight;
-        return top;
-      };
+        const vh = window.innerHeight;
+        const y = window.scrollY;
+        // Where a section sits on screen right now, including its pinned position
+        const topOf = (i: number) => Math.max(tops[i] - y, Math.min(0, vh - heights[i]));
 
-      let ticking = false;
-
-      const updateScrollUI = () => {
-        ticking = false;
-
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = max > 0 ? window.scrollY / max : 0;
+        // progress bar
+        const max = docHeight - vh;
+        const progress = max > 0 ? y / max : 0;
         if (bar) bar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
 
-        const probe = window.scrollY + window.innerHeight * 0.4;
+        // active section (top toolbar + side dots)
+        const probe = y + vh * 0.4;
         let active = 0;
-        for (let i = 0; i < sections.length; i++) {
-          if (naturalTop(i) <= probe) active = i;
+        for (let i = 0; i < tops.length; i++) if (tops[i] <= probe) active = i;
+        if (active !== lastActive) {
+          lastActive = active;
+          [dotLinks, topLinks].forEach((links) =>
+            links.forEach((link, i) => {
+              link.classList.toggle('is-active', i === active);
+              if (i === active) link.setAttribute('aria-current', 'true');
+              else link.removeAttribute('aria-current');
+            })
+          );
         }
-        navLinks.forEach((link, i) => {
-          link.classList.toggle('is-active', i === active);
-          if (i === active) link.setAttribute('aria-current', 'true');
-          else link.removeAttribute('aria-current');
-        });
-      };
 
-      const onScroll = () => {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(updateScrollUI);
+        // a section that the next one fully covers stops animating
+        for (let i = 0; i < sections.length - 1; i++) {
+          const t = topOf(i + 1);
+          const covered = t <= -80 && t + heights[i + 1] >= vh - 1;
+          if (covered !== coveredState[i]) {
+            coveredState[i] = covered;
+            sections[i].classList.toggle('is-covered', covered);
+          }
         }
-      };
 
-      navLinks.forEach((link, i) => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          window.scrollTo({ top: naturalTop(i), behavior: 'smooth' });
-        });
-      });
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
-      updateScrollUI();
-
-      // ---------- Automation pipeline: spine fill + stage activation ----------
-      const pipe = document.getElementById('pipe');
-      if (pipe) {
-        const pipeSection = pipe.closest('section');
-        const spine = pipe.querySelector<HTMLElement>('.spine');
-        const stages = Array.from(pipe.querySelectorAll<HTMLElement>('.stage'));
-        let pipeQueued = false;
-
-        const updatePipe = () => {
-          pipeQueued = false;
-          const vh = window.innerHeight;
-          // The "reading line" the spine follows. It sits at 55% of the screen, then
-          // slides to the bottom as the section reaches its pinned position, so the
-          // last stage always lights up before the next section covers it.
-          const secBottom = pipeSection ? pipeSection.getBoundingClientRect().bottom : vh;
+        // process section: spine fill, travelling dot, stage activation
+        if (spine && pipeIndex >= 0) {
+          const st = topOf(pipeIndex);
+          const secBottom = st + heights[pipeIndex];
+          // The reading line sits at 55% of the screen, then slides to the bottom as the
+          // section reaches its pinned position, so the last stage always lights up.
           const k = Math.min(1, Math.max(0, (vh * 1.5 - secBottom) / (vh * 0.5)));
           const line = vh * 0.55 + vh * 0.45 * k;
-          const r = spine ? spine.getBoundingClientRect() : pipe.getBoundingClientRect();
-          const p = Math.min(1, Math.max(0, (line - r.top) / r.height));
-          pipe.style.setProperty('--p', String(p));
-
-          stages.forEach((s) => {
-            const n = s.querySelector('.node')!.getBoundingClientRect();
-            s.classList.toggle('reached', n.top + n.height / 2 < line);
-          });
-        };
-
-        const queuePipe = () => {
-          if (!pipeQueued) {
-            pipeQueued = true;
-            requestAnimationFrame(updatePipe);
+          const p = spineHeight > 0 ? Math.min(1, Math.max(0, (line - (st + spineOffset)) / spineHeight)) : 0;
+          if (Math.abs(p - lastP) > 0.0005) {
+            lastP = p;
+            spine.style.setProperty('--p', p.toFixed(4));
           }
-        };
-
-        window.addEventListener('scroll', queuePipe, { passive: true });
-        window.addEventListener('resize', queuePipe);
-        updatePipe();
+          stages.forEach((s, i) => {
+            const reached = st + nodeOffsets[i] < line;
+            if (reached !== reachedState[i]) {
+              reachedState[i] = reached;
+              s.classList.toggle('reached', reached);
+            }
+          });
+        }
       }
+
+      // navigation clicks
+      const goTo = (i: number) => (e: Event) => {
+        e.preventDefault();
+        window.scrollTo({ top: tops[i], behavior: 'smooth' });
+      };
+      dotLinks.forEach((link, i) => link.addEventListener('click', goTo(i)));
+      topLinks.forEach((link, i) => link.addEventListener('click', goTo(i)));
+
+      // side dots stay hidden until the top toolbar has scrolled out of view
+      if ('IntersectionObserver' in window) {
+        if (topNav && dotNav) {
+          new IntersectionObserver(([entry]) => {
+            dotNav.classList.toggle('is-visible', !entry.isIntersecting);
+          }).observe(topNav);
+        }
+        // pause the looping stage visuals while they are off screen
+        if (stages.length) {
+          const io = new IntersectionObserver(
+            (entries) => entries.forEach((e) => e.target.classList.toggle('offscreen', !e.isIntersecting)),
+            { rootMargin: '160px 0px' }
+          );
+          stages.forEach((s) => io.observe(s));
+        }
+      } else if (dotNav) {
+        dotNav.classList.add('is-visible');
+      }
+
+      new ResizeObserver(measure).observe(document.body);
+      sections.forEach((el) => new ResizeObserver(measure).observe(el));
+      window.addEventListener('resize', measure);
+      window.addEventListener('load', measure);
+      window.addEventListener('scroll', queue, { passive: true });
+      measure();
     </script>
   </body>
 </html>
