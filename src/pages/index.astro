@@ -16,8 +16,47 @@ const profilePhoto = "/profile.jpg";
   </head>
   <body class="bg-canvas text-ink font-sans m-0 p-0 antialiased overflow-x-clip">
 
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Side dot navigation (wide screens only) -->
+    <nav id="dot-nav" aria-label="Page sections">
+      <a href="#home" class="is-active" aria-label="Home"><span class="dot-label">Home</span></a>
+      <a href="#pipeline" aria-label="Pipeline"><span class="dot-label">Pipeline</span></a>
+      <a href="#experience" aria-label="Experience"><span class="dot-label">Experience</span></a>
+      <a href="#skills" aria-label="Skills"><span class="dot-label">Skills</span></a>
+      <a href="#education" aria-label="Education"><span class="dot-label">Education</span></a>
+    </nav>
+
     <!-- 1. HERO SECTION -->
-    <section data-stack style="z-index:1" class="hero-pastel-mesh w-full px-6 pt-32 pb-20 text-center flex flex-col items-center">
+    <section id="home" data-stack style="z-index:1" class="hero-pastel-mesh w-full px-6 pt-32 pb-20 text-center flex flex-col items-center">
+      <div class="side-deco" style="--ay:35%;--by:85%" aria-hidden="true">
+        <div class="deco-pipe"></div>
+
+        <div class="deco-card deco-left" style="top:24%;--d:-1s">
+          <div class="card-head">Hub_Sheet</div>
+          <div class="sheet-grid"><i class="hl"></i><i></i><i></i><i class="ok"></i><i></i><i class="hl"></i><i class="ok"></i><i></i><i class="ok"></i><i></i><i></i><i class="hl"></i><i></i><i class="ok"></i><i></i><i></i></div>
+        </div>
+
+        <div class="deco-card deco-left" style="top:64%;--d:-3s">
+          <div class="card-head"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Mail Merge</div>
+          <div class="bar"><span></span></div>
+          <div class="meta">80+ hrs → 20 min</div>
+        </div>
+
+        <div class="deco-card deco-right" style="top:20%;--d:-2s">
+          <div class="card-head"><span class="traffic"></span>sync.gs</div>
+<pre><span class="k">function</span> <span class="f">syncHub</span>() &#123;
+  <span class="k">const</span> rows = pull();
+  hub.<span class="f">write</span>(rows);
+&#125;</pre>
+        </div>
+
+        <div class="deco-card deco-right" style="top:60%;--d:-4s">
+          <div class="card-head"><svg class="ico spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>Auto-sync<span class="live"></span></div>
+          <div class="meta">every 30 min</div>
+        </div>
+      </div>
       <div class="max-w-3xl mx-auto z-10 relative animate-fade-up">
 
         <!-- ============ PROFILE PICTURE (edit `profilePhoto` at the top of this file) ============ -->
@@ -106,8 +145,224 @@ const profilePhoto = "/profile.jpg";
       </div>
     </section>
 
-    <!-- 2. WORK EXPERIENCE SECTION -->
-    <section data-stack style="z-index:2" class="stack-card py-24 bg-canvas">
+    <!-- 2. PROCESS SECTION: how a property stays current and compliant -->
+    <section id="pipeline" data-stack style="z-index:2" class="stack-card pipe-section py-24">
+      <div class="max-w-5xl mx-auto px-6">
+
+        <div class="text-center mb-20 max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4" style="letter-spacing:-0.4px;">
+            A system that keeps every property in good standing with its HOA
+          </h2>
+          <p class="text-ink-mute leading-relaxed">
+            Every property we manage answers to an HOA, and every HOA works through its own channels
+            and timelines. I built the tools that turn that into one automated workflow: requests go out,
+            documents come in, files are named and uploaded, and the master file keeps itself current.
+            Requesting, compiling and uploading used to be done by hand. Now we always know where each
+            property stands.
+          </p>
+        </div>
+
+        <div class="pipe" id="pipe">
+          <div class="spine" aria-hidden="true">
+            <div class="spine-fill"></div>
+          </div>
+
+          <!-- 1 · REQUEST -->
+          <article class="stage">
+            <span class="node" aria-hidden="true">1</span>
+            <div class="stage-text">
+              <h3>Requests go out in minutes</h3>
+              <p>Requests to HOAs and management companies no longer go out one email at a time. A custom mail merge sends individualized emails in about 20 minutes, a job that used to take over 80 hours. Phone calls and mailed requests cover the rest.</p>
+              <span class="stat">80+ hrs → 20 min</span>
+            </div>
+            <div class="stage-visual">
+              <div class="vis">
+                <div class="vis-head">Requests out</div>
+                <div class="mails"><span style="--i:0">✉</span><span style="--i:1">✉</span><span style="--i:2">✉</span><span style="--i:3">✉</span><span style="--i:4">✉</span></div>
+                <div class="bar"><span></span></div>
+                <div class="meta">Email via mail merge, phone, post</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2 · COLLECT -->
+          <article class="stage">
+            <span class="node" aria-hidden="true">2</span>
+            <div class="stage-text">
+              <h3>Every channel feeds one pipeline</h3>
+              <p>HOAs respond through whichever channel they use: the portals we are already registered on, email, phone, or mail. Whichever one it is, the information is captured in the same place.</p>
+              <span class="stat">4 channels, 1 destination</span>
+            </div>
+            <div class="stage-visual">
+              <div class="vis">
+                <div class="vis-head">Incoming</div>
+                <div class="chips">
+                  <span style="--i:0">Portal</span><span style="--i:1">Email</span><span style="--i:2">Phone</span><span style="--i:3">Mail</span>
+                </div>
+                <div class="funnel"></div>
+                <div class="hubbar">Documents in <em>receiving…</em></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3 · PROJECT SHEETS -->
+          <article class="stage">
+            <span class="node" aria-hidden="true">3</span>
+            <div class="stage-text">
+              <h3>Each project has its own source of truth</h3>
+              <p>Our spreadsheets are segregated by project. Whatever an HOA sends back is recorded in the sheet for that project, so every workstream stays organized.</p>
+              <span class="stat">One sheet per project</span>
+            </div>
+            <div class="stage-visual">
+              <div class="vis">
+                <div class="vis-head">Project sheets</div>
+                <div class="tabs"><b class="on">Project A</b><b>Project B</b><b>Project C</b></div>
+                <div class="sheet">
+                  <div class="row th"><b>Property</b><b>Asked</b><b>Got</b><b>Status</b></div>
+                  <div class="row"><i></i><i class="t1"></i><i class="land" style="--i:0"></i><i class="land" style="--i:0"></i></div>
+                  <div class="row"><i></i><i class="t1"></i><i class="land" style="--i:1"></i><i class="land" style="--i:1"></i></div>
+                  <div class="row"><i></i><i class="t1"></i><i class="land" style="--i:2"></i><i class="land" style="--i:2"></i></div>
+                  <div class="row"><i></i><i class="t1"></i><i class="land" style="--i:3"></i><i class="land" style="--i:3"></i></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4 · MASTER FILE -->
+          <article class="stage">
+            <span class="node" aria-hidden="true">4</span>
+            <div class="stage-text">
+              <h3>One master file shows every property</h3>
+              <p>A master file brings every project type into a single view. Apps Script updates it on a set interval and pushes each property's portal data alongside its record, so current status is always one glance away.</p>
+              <span class="stat">Auto-updates every 30 min</span>
+            </div>
+            <div class="stage-visual">
+              <div class="vis">
+                <div class="vis-head">
+                  Master file
+                  <span class="sync"><svg class="spin-slow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>every 30 min</span>
+                </div>
+                <div class="sheet m3">
+                  <div class="row th"><b>Property</b><b>Projects</b><b>Portal data</b></div>
+                  <div class="row"><i></i><i class="t1"></i><i class="p" style="--i:0"></i></div>
+                  <div class="row"><i></i><i class="t2"></i><i class="p" style="--i:1"></i></div>
+                  <div class="row"><i></i><i class="t3"></i><i class="p" style="--i:2"></i></div>
+                  <div class="row"><i></i><i class="t1"></i><i class="p" style="--i:3"></i></div>
+                  <div class="row"><i></i><i class="t2"></i><i class="p" style="--i:4"></i></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5 · RENAME -->
+          <article class="stage">
+            <span class="node" aria-hidden="true">5</span>
+            <div class="stage-text">
+              <h3>Consistent file names, built in</h3>
+              <p>A tool I built renames each document the same way, every time. That consistency is what makes the next step possible: files can be uploaded without anyone sorting or checking them by hand.</p>
+              <span class="stat">Same naming, every file</span>
+            </div>
+            <div class="stage-visual">
+              <div class="vis">
+                <div class="vis-head">Renaming tool</div>
+                <ul class="files">
+                  <li style="--i:0"><span class="old">scan0042.pdf</span><span class="new">1042_Statement_2026-10.pdf</span></li>
+                  <li style="--i:1"><span class="old">Document (3).pdf</span><span class="new">1042_Invoice_2026-10.pdf</span></li>
+                  <li style="--i:2"><span class="old">IMG_2231.pdf</span><span class="new">2210_Notice_2026-09.pdf</span></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 · UPLOAD -->
+          <article class="stage">
+            <span class="node" aria-hidden="true">6</span>
+            <div class="stage-text">
+              <h3>Documents reach the website automatically</h3>
+              <p>Renamed files are picked up and uploaded to our company website on their own. Compiling and uploading used to be manual work. It now runs in the background.</p>
+              <span class="stat">7,000+ documents in two months</span>
+            </div>
+            <div class="stage-visual">
+              <div class="vis term">
+                <div class="vis-head"><span class="traffic"></span>auto-upload</div>
+<pre><span class="c">$</span> watch renamed/
+<span class="g">✓</span> new files found
+<span class="g">✓</span> uploaded to website
+<span class="g">✓</span> sheet updated</pre>
+                <div class="bar"><span></span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7 · COMPLIANT -->
+          <article class="stage">
+            <span class="node" aria-hidden="true">7</span>
+            <div class="stage-text">
+              <h3>Compliant properties, fewer fees and liens</h3>
+              <p>Because we know each property's status with its HOA, we stay current and compliant, and our clients avoid liens and late fees. These tools are what make that visibility possible across 6,000+ properties.</p>
+              <span class="stat">$100k/month in late fees prevented</span>
+            </div>
+            <div class="stage-visual">
+              <div class="vis">
+                <div class="vis-head">Property status</div>
+                <ul class="checks">
+                  <li style="--i:0"><span>Account current</span><u class="good">✓</u></li>
+                  <li style="--i:1"><span>HOA compliant</span><u class="good">✓</u></li>
+                  <li style="--i:2"><span>Late fees avoided</span><u class="good">✓</u></li>
+                  <li style="--i:3"><span>Lien avoided</span><u class="good">✓</u></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <div class="loop">
+            <svg class="spin-slow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg>
+            Manual work stopped. The syncing never does.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. WORK EXPERIENCE SECTION -->
+    <section id="experience" data-stack style="z-index:3" class="stack-card py-24 bg-canvas">
+      <div class="side-deco" style="--ay:20%;--by:75%" aria-hidden="true">
+        <div class="deco-card deco-left" style="top:6%;--d:-2s">
+          <div class="card-head">SOP checklist</div>
+          <ul class="tick"><li>Prepayments</li><li>Validation</li><li>Auto-Pull</li></ul>
+        </div>
+
+        <div class="deco-card deco-left" style="top:30%;--d:-5s">
+          <div class="card-head">Team</div>
+          <div class="dots"><i class="on"></i><i class="on"></i><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i></div>
+          <div class="meta">2 → 9 people</div>
+        </div>
+
+        <div class="deco-card deco-left" style="top:56%;--d:-1s">
+          <div class="card-head">Uploads</div>
+          <div class="big">7,000+</div>
+          <div class="meta">docs in 2 months</div>
+        </div>
+
+        <div class="deco-card deco-right" style="top:10%;--d:-3s">
+          <div class="card-head"><span class="traffic"></span>pull.gs</div>
+<pre><span class="k">const</span> data = <span class="f">partition</span>(
+  assignees
+);
+hub.<span class="f">collect</span>(data);</pre>
+        </div>
+
+        <div class="deco-card deco-right" style="top:34%;--d:-4s">
+          <div class="card-head">Late fees</div>
+          <div class="bars down"><i style="--h:100%;--i:0"></i><i style="--h:78%;--i:1"></i><i style="--h:55%;--i:2"></i><i style="--h:34%;--i:3"></i><i style="--h:18%;--i:4"></i></div>
+          <div class="meta">$100k/mo prevented</div>
+        </div>
+
+        <div class="deco-card deco-right" style="top:84%;--d:-2s">
+          <div class="card-head">Community</div>
+          <div class="bars"><i style="--h:30%;--i:0"></i><i style="--h:46%;--i:1"></i><i style="--h:62%;--i:2"></i><i style="--h:82%;--i:3"></i><i style="--h:100%;--i:4"></i></div>
+          <div class="meta">826 → 1,238 members</div>
+        </div>
+      </div>
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-16 text-ink flex items-center justify-center gap-3" style="letter-spacing: -0.256px;">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
@@ -196,8 +451,18 @@ const profilePhoto = "/profile.jpg";
       </div>
     </section>
 
-    <!-- 3. SKILLS & ARSENAL SECTION -->
-    <section data-stack style="z-index:3" class="stack-card py-24 bg-canvas-cream border-t border-hairline">
+    <!-- 4. SKILLS & ARSENAL SECTION -->
+    <section id="skills" data-stack style="z-index:4" class="stack-card py-24 bg-canvas-cream border-t border-hairline">
+      <div class="side-deco" style="--ay:60%;--by:25%" aria-hidden="true">
+        <div class="deco-card deco-left" style="top:26%;--d:-3s">
+          <div class="flow"><span>Raw data</span><b></b><span class="mid">Script</span><b></b><span class="end">Hub</span></div>
+        </div>
+
+        <div class="deco-card deco-right" style="top:26%;--d:-1s">
+          <div class="card-head">Toolbox</div>
+          <div class="pills"><span>Workspace</span><span>Zendesk</span><span>Adobe</span><span>Office</span></div>
+        </div>
+      </div>
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-16 text-ink flex items-center justify-center gap-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
@@ -266,8 +531,20 @@ const profilePhoto = "/profile.jpg";
       </div>
     </section>
 
-    <!-- 4. EDUCATION & INTERESTS SECTION -->
-    <section data-stack style="z-index:4" class="stack-card pt-24 bg-canvas border-t border-hairline">
+    <!-- 5. EDUCATION & INTERESTS SECTION -->
+    <section id="education" data-stack style="z-index:5" class="stack-card pt-24 bg-canvas border-t border-hairline">
+      <div class="side-deco" style="--ay:25%;--by:65%" aria-hidden="true">
+        <div class="deco-card deco-left" style="top:10%;--d:-2s">
+          <div class="card-head">Timeline</div>
+          <ul class="tl"><li><b>2019</b> ACLC, ICT</li><li><b>2023</b> LNU, Biology</li></ul>
+        </div>
+
+        <div class="deco-card deco-right" style="top:12%;--d:-4s">
+          <div class="card-head"><span class="traffic"></span>terminal</div>
+<pre><span class="c">$</span> git push
+<span class="g">✓</span> deployed</pre>
+        </div>
+      </div>
       <div class="max-w-5xl mx-auto px-6 pb-24 flex flex-col lg:flex-row gap-12 lg:gap-16">
         
         <!-- Education Cards -->
@@ -336,7 +613,7 @@ const profilePhoto = "/profile.jpg";
 
       </div>
 
-      <!-- 5. FOOTER (lives inside the Education section, so it never covers it) -->
+      <!-- 6. FOOTER (lives inside the Education section, so it never covers it) -->
       <footer class="stack-card bg-surface-aubergine py-24 px-6 text-center text-on-aubergine-mute border-t border-primary-tint">
       <h2 class="text-4xl font-bold text-on-primary mb-8" style="letter-spacing: -0.6px;">Let's optimize your workflow.</h2>
       <a href="mailto:carlpestilos2@gmail.com" class="inline-flex items-center justify-center gap-2 bg-canvas text-primary font-bold text-base px-8 py-4 rounded-pill mb-16 hover:bg-canvas-cream transition-transform hover:-translate-y-1 shadow-lg">
@@ -350,12 +627,14 @@ const profilePhoto = "/profile.jpg";
     <style>
       .hero-pastel-mesh {
         background-color: #f4ede4;
-        background-image: 
+        background-image:
+          /* soft aubergine tint at the top, melting into the cream */
+          linear-gradient(180deg, #c9aadc 0px, #d9c4e8 140px, #e8dcef 280px, rgba(244, 237, 228, 0) 460px),
           radial-gradient(circle at 0% 100%, rgba(255, 220, 230, 0.6) 0%, transparent 40%),
           radial-gradient(circle at 100% 100%, rgba(200, 240, 255, 0.6) 0%, transparent 40%),
           radial-gradient(circle at 50% 100%, rgba(233, 216, 255, 0.7) 0%, transparent 60%);
       }
-      
+
       @keyframes fadeUp {
         from { opacity: 0; transform: translateY(30px); }
         to { opacity: 1; transform: translateY(0); }
@@ -403,6 +682,534 @@ const profilePhoto = "/profile.jpg";
         border-top-right-radius: 32px;
         box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.12);
       }
+
+      /* ---------- Side decorations (wide screens only) ---------- */
+      .side-deco {
+        display: none;
+        position: absolute;
+        inset: 0;
+        z-index: -1; /* behind all content, above the section background */
+        overflow: hidden;
+        border-radius: inherit;
+        pointer-events: none;
+      }
+
+      @media (min-width: 1100px) {
+        .side-deco { display: block; }
+      }
+
+      /* Soft pastel glows in the left/right margins */
+      .side-deco::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 380px 420px at 0% var(--ay, 30%), rgba(255, 220, 230, 0.55), transparent 70%),
+          radial-gradient(ellipse 380px 420px at 100% var(--by, 70%), rgba(200, 240, 255, 0.55), transparent 70%),
+          radial-gradient(ellipse 320px 360px at 100% var(--ay, 30%), rgba(233, 216, 255, 0.55), transparent 70%),
+          radial-gradient(ellipse 320px 360px at 0% var(--by, 70%), rgba(233, 216, 255, 0.5), transparent 70%);
+      }
+
+      /* Dot grid that fades out before it reaches the content column */
+      .side-deco::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(74, 21, 75, 0.16) 1.2px, transparent 1.4px);
+        background-size: 22px 22px;
+        -webkit-mask-image: linear-gradient(to right, #000 0, transparent calc(50% - 540px), transparent calc(50% + 540px), #000 100%);
+        mask-image: linear-gradient(to right, #000 0, transparent calc(50% - 540px), transparent calc(50% + 540px), #000 100%);
+      }
+
+      /* ---------- Scroll progress bar ---------- */
+      #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        z-index: 60;
+        transform-origin: left;
+        transform: scaleX(0);
+        background: linear-gradient(90deg, #4a154b, #b388eb);
+        pointer-events: none;
+      }
+
+      /* ---------- Side dot navigation ---------- */
+      #dot-nav {
+        display: none;
+        position: fixed;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 50;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      @media (min-width: 1100px) {
+        #dot-nav { display: flex; }
+      }
+
+      #dot-nav a {
+        position: relative;
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 9999px;
+        background: #fff;
+        border: 2px solid #4a154b;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+      }
+
+      /* Larger invisible hit area so the dots are easy to click */
+      #dot-nav a::before {
+        content: "";
+        position: absolute;
+        inset: -8px;
+      }
+
+      #dot-nav a:hover { transform: scale(1.3); }
+
+      #dot-nav a.is-active {
+        background: #4a154b;
+        box-shadow: 0 0 0 3px #fff, 0 2px 6px rgba(0, 0, 0, 0.3);
+        transform: scale(1.15);
+      }
+
+      .dot-label {
+        position: absolute;
+        right: 26px;
+        top: 50%;
+        transform: translateY(-50%) translateX(4px);
+        background: #4a154b;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      #dot-nav a:hover .dot-label,
+      #dot-nav a:focus-visible .dot-label {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+      }
+
+      /* ---------- Floating automation widgets (extra-wide screens only) ---------- */
+      .deco-card,
+      .deco-pipe {
+        display: none;
+      }
+
+      @media (min-width: 1440px) {
+        .deco-card { display: block; }
+        .deco-pipe { display: block; }
+      }
+
+      .deco-card {
+        --w: clamp(120px, calc((100vw - 1024px) / 2 - 72px), 190px);
+        position: absolute;
+        z-index: 1;
+        width: var(--w);
+        box-sizing: border-box;
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(74, 21, 75, 0.12);
+        box-shadow: 0 12px 32px rgba(74, 21, 75, 0.1);
+        backdrop-filter: blur(6px);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 10px;
+        line-height: 1.5;
+        color: #4a154b;
+        animation: floatY 7s ease-in-out infinite;
+        animation-delay: var(--d, 0s);
+      }
+
+      .deco-left { left: 56px; }
+      .deco-right { right: 56px; }
+
+      @keyframes floatY {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      .card-head {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 6px;
+        font-weight: 700;
+        font-size: 10px;
+        white-space: nowrap;
+      }
+
+      .ico { width: 12px; height: 12px; flex-shrink: 0; }
+
+      .traffic {
+        width: 6px;
+        height: 6px;
+        margin-right: 18px;
+        border-radius: 50%;
+        background: #ff6b6b;
+        box-shadow: 10px 0 0 #fbbf24, 20px 0 0 #34d399;
+      }
+
+      .deco-card pre {
+        margin: 0;
+        font: inherit;
+        white-space: pre;
+        overflow: hidden;
+      }
+
+      .deco-card .k { color: #9b5de5; }
+      .deco-card .f { color: #d6336c; }
+      .deco-card .c { color: #8a7a8f; }
+      .deco-card .g { color: #16a34a; font-weight: 700; }
+
+      /* spreadsheet */
+      .sheet-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3px;
+      }
+      .sheet-grid i {
+        height: 14px;
+        border-radius: 3px;
+        background: rgba(74, 21, 75, 0.07);
+      }
+      .sheet-grid i.hl { background: rgba(179, 136, 235, 0.55); }
+      .sheet-grid i.ok { background: rgba(52, 211, 153, 0.45); }
+
+      /* mail merge progress */
+      .bar {
+        height: 6px;
+        border-radius: 9999px;
+        background: rgba(74, 21, 75, 0.1);
+        overflow: hidden;
+      }
+      .bar span {
+        display: block;
+        height: 100%;
+        border-radius: 9999px;
+        background: linear-gradient(90deg, #4a154b, #b388eb);
+        transform-origin: left;
+        animation: fillBar 5s ease-in-out infinite;
+      }
+      @keyframes fillBar {
+        0% { transform: scaleX(0); }
+        70%, 100% { transform: scaleX(1); }
+      }
+
+      .meta { margin-top: 6px; color: #6b5b6e; white-space: nowrap; }
+
+      /* auto-sync */
+      .spin { animation: spin 3s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+
+      .live {
+        width: 6px;
+        height: 6px;
+        margin-left: auto;
+        border-radius: 50%;
+        background: #22c55e;
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+        animation: pulse 2s ease-out infinite;
+      }
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+        100% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      }
+
+      /* checklist */
+      .tick {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .tick li { white-space: nowrap; }
+      .tick li::before {
+        content: "✓";
+        margin-right: 6px;
+        color: #16a34a;
+        font-weight: 700;
+      }
+
+      /* mini flow */
+      .flow { text-align: center; }
+      .flow span {
+        display: block;
+        padding: 3px 0;
+        border-radius: 9999px;
+        font-weight: 700;
+        background: #f9f0ff;
+        border: 1px solid rgba(74, 21, 75, 0.15);
+      }
+      .flow .mid { background: #4a154b; color: #fff; }
+      .flow .end { background: #611f69; color: #fff; }
+      .flow b {
+        display: block;
+        width: 2px;
+        height: 12px;
+        margin: 2px auto;
+        background: repeating-linear-gradient(to bottom, rgba(74, 21, 75, 0.45) 0 3px, transparent 3px 6px);
+      }
+
+      /* dotted rail with a travelling data packet */
+      .deco-pipe {
+        position: absolute;
+        left: 20px;
+        top: 6%;
+        bottom: 6%;
+        width: 2px;
+        background: repeating-linear-gradient(to bottom, rgba(74, 21, 75, 0.25) 0 6px, transparent 6px 12px);
+      }
+      .deco-pipe::after {
+        content: "";
+        position: absolute;
+        left: -3px;
+        top: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #9b5de5;
+        box-shadow: 0 0 12px 4px rgba(155, 93, 229, 0.55);
+        animation: packet 6s linear infinite;
+      }
+      @keyframes packet {
+        0% { top: 0; opacity: 0; }
+        10%, 90% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .deco-card,
+        .bar span,
+        .spin,
+        .live,
+        .deco-pipe::after {
+          animation: none;
+        }
+      }
+
+      /* =====================================================
+         NEW SIDE-DECORATION CARDS (one of each, per section)
+         ===================================================== */
+      .big { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.2; }
+
+      .dots { display: flex; flex-wrap: wrap; gap: 4px; }
+      .dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(74, 21, 75, 0.12); animation: join 6s ease infinite; animation-delay: calc(var(--i) * 0.35s); }
+      .dots i.on { animation: none; background: #4a154b; }
+      @keyframes join {
+        0%, 8% { background: rgba(74, 21, 75, 0.12); transform: scale(0.7); }
+        22%, 85% { background: #9b5de5; transform: scale(1); }
+        100% { background: rgba(74, 21, 75, 0.12); transform: scale(0.7); }
+      }
+
+      .bars { display: flex; align-items: flex-end; gap: 4px; height: 34px; }
+      .bars i { flex: 1; height: var(--h); border-radius: 3px 3px 0 0; background: rgba(155, 93, 229, 0.65); transform-origin: bottom; animation: grow 5s ease-out infinite; animation-delay: calc(var(--i) * 0.2s); }
+      .bars.down i { background: rgba(52, 211, 153, 0.7); }
+      @keyframes grow { 0% { transform: scaleY(0.1); } 30%, 100% { transform: scaleY(1); } }
+
+      .pills { display: grid; gap: 4px; }
+      .pills span { padding: 3px 8px; border-radius: 9999px; font-weight: 700; background: #f9f0ff; border: 1px solid rgba(74, 21, 75, 0.15); }
+      .pills span::before { content: "✓"; margin-right: 6px; color: #16a34a; }
+
+      .tl { list-style: none; margin: 0; padding: 0 0 0 12px; border-left: 2px dotted rgba(74, 21, 75, 0.35); display: grid; gap: 8px; }
+      .tl li { position: relative; white-space: nowrap; }
+      .tl li::before { content: ""; position: absolute; left: -17px; top: 4px; width: 8px; height: 8px; border-radius: 50%; background: #9b5de5; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .dots i, .bars i { animation: none; }
+      }
+
+      /* =====================================================
+         PROCESS SECTION
+         ===================================================== */
+      .pipe-section {
+        background:
+          radial-gradient(ellipse 600px 500px at 0% 0%, rgba(255, 220, 230, 0.45), transparent 70%),
+          radial-gradient(ellipse 600px 500px at 100% 100%, rgba(200, 240, 255, 0.45), transparent 70%),
+          #faf6fd;
+      }
+
+      .pipe { position: relative; --p: 0; }
+
+      .spine {
+        position: absolute;
+        top: 0; bottom: 80px; /* stops above the closing pill, leaving a gap */
+        left: 20px;
+        width: 3px;
+        border-radius: 9999px;
+        background: repeating-linear-gradient(to bottom, rgba(74,21,75,.22) 0 6px, transparent 6px 12px);
+      }
+      .spine-fill {
+        position: absolute;
+        top: 0; left: 0; width: 100%;
+        height: calc(var(--p) * 100%);
+        border-radius: 9999px;
+        background: linear-gradient(to bottom, #4a154b, #b388eb);
+      }
+      .spine-fill::after {
+        content: "";
+        position: absolute;
+        left: 50%; bottom: -6px;
+        width: 12px; height: 12px;
+        margin-left: -6px;
+        border-radius: 50%;
+        background: #9b5de5;
+        box-shadow: 0 0 14px 5px rgba(155, 93, 229, .55);
+      }
+
+      .stage { position: relative; display: grid; gap: 20px; padding: 0 0 72px 64px; }
+      .stage:last-of-type { padding-bottom: 48px; }
+
+      .node {
+        position: absolute;
+        left: 0; top: 0;
+        width: 42px; height: 42px;
+        display: flex; align-items: center; justify-content: center;
+        border-radius: 50%;
+        font-weight: 700; font-size: 16px;
+        background: #fff; color: #4a154b;
+        border: 2px solid rgba(74,21,75,.25);
+        transition: background .4s, color .4s, border-color .4s, box-shadow .4s;
+      }
+      .stage.reached .node {
+        background: #4a154b; color: #fff; border-color: #4a154b;
+        box-shadow: 0 0 0 6px rgba(179,136,235,.3);
+      }
+
+      .stage-text h3 { font-size: 24px; font-weight: 700; color: #4a154b; margin: 0 0 8px; letter-spacing: -.2px; }
+      .stage-text p { margin: 0 0 14px; color: #6b5b6e; line-height: 1.65; max-width: 44ch; }
+      .stat { display: inline-block; padding: 5px 14px; border-radius: 90px; font-size: 13px; font-weight: 700; background: #4a154b; color: #fff; }
+
+      .stage-text, .stage-visual { opacity: .35; transition: opacity .6s ease; }
+      .stage.reached .stage-text, .stage.reached .stage-visual { opacity: 1; }
+
+      @media (min-width: 900px) {
+        .spine { left: 50%; margin-left: -1.5px; }
+        .stage { grid-template-columns: 1fr 1fr; gap: 0 96px; padding-left: 0; align-items: start; }
+        .node { left: 50%; margin-left: -21px; }
+        .stage:nth-of-type(odd) .stage-text { text-align: right; }
+        .stage:nth-of-type(odd) .stage-text p { margin-left: auto; }
+        .stage:nth-of-type(even) .stage-text { grid-column: 2; grid-row: 1; }
+        .stage:nth-of-type(even) .stage-visual { grid-column: 1; grid-row: 1; }
+        .stage:nth-of-type(even) .vis { margin-left: auto; }
+        .stage-text { padding-top: 4px; }
+      }
+
+      .vis {
+        position: relative;
+        overflow: hidden;
+        max-width: 340px;
+        padding: 14px 16px 16px;
+        border-radius: 14px;
+        background: rgba(255,255,255,.85);
+        border: 1px solid rgba(74,21,75,.14);
+        box-shadow: 0 10px 28px rgba(74,21,75,.09);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 12px; color: #4a154b;
+      }
+      .vis-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-weight: 700; }
+
+      /* looping animations wait until the stage is reached */
+      .stage:not(.reached) .vis * { animation-play-state: paused !important; }
+
+      /* 1 request */
+      .mails { display: flex; justify-content: space-between; font-size: 18px; margin-bottom: 10px; }
+      .mails span { animation: fly 2.4s ease-in infinite; animation-delay: calc(var(--i) * .25s); }
+      @keyframes fly { 0% { transform: translate(0,0); opacity: 1; } 100% { transform: translate(26px,-26px); opacity: 0; } }
+
+      /* 2 collect */
+      .chips { display: flex; gap: 6px; justify-content: space-between; }
+      .chips span {
+        padding: 3px 8px; border-radius: 8px; background: #f9f0ff;
+        border: 1px solid rgba(74,21,75,.15); font-weight: 700;
+        animation: chipDrop 3.2s ease-in infinite;
+        animation-delay: calc(var(--i) * .35s);
+      }
+      @keyframes chipDrop {
+        0%   { transform: translateY(0); opacity: 1; }
+        60%  { transform: translateY(46px) scale(.8); opacity: 0; }
+        100% { transform: translateY(46px) scale(.8); opacity: 0; }
+      }
+      .funnel { height: 40px; }
+      .hubbar { padding: 8px 10px; border-radius: 8px; background: #4a154b; color: #fff; display: flex; justify-content: space-between; font-weight: 700; }
+      .hubbar em { font-style: normal; color: #d8b9ff; animation: blink 1.4s ease-in-out infinite; }
+      @keyframes blink { 50% { opacity: .35; } }
+
+      /* 3 project sheets + 4 master file */
+      .tabs { display: flex; gap: 6px; margin-bottom: 10px; }
+      .tabs b { padding: 3px 8px; border-radius: 8px; background: #f9f0ff; border: 1px solid rgba(74,21,75,.15); font-size: 10px; color: #6b5b6e; }
+      .tabs b.on { background: #4a154b; color: #fff; border-color: #4a154b; }
+
+      .sheet { display: grid; gap: 5px; }
+      .sheet .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+      .sheet.m3 .row { grid-template-columns: 1.1fr 1fr 1.2fr; }
+      .sheet .row i { height: 14px; border-radius: 3px; background: rgba(74,21,75,.09); }
+      .sheet .row b { font-size: 10px; color: #6b5b6e; }
+      .sheet .row i.t1 { background: rgba(179,136,235,.6); }
+      .sheet .row i.t2 { background: rgba(52,211,153,.5); }
+      .sheet .row i.t3 { background: rgba(255,170,190,.7); }
+      .sheet .row i.land { animation: land 4s ease infinite; animation-delay: calc(var(--i) * .6s); }
+      .sheet .row i.p { background: rgba(179,136,235,.3); animation: pushed 4s ease infinite; animation-delay: calc(var(--i) * .5s); }
+      @keyframes land { 0%, 20% { background: rgba(74,21,75,.09); } 40%, 100% { background: rgba(52,211,153,.55); } }
+      @keyframes pushed { 0%, 20% { background: rgba(179,136,235,.3); } 40%, 100% { background: rgba(155,93,229,.8); } }
+      .sync { margin-left: auto; display: flex; align-items: center; gap: 5px; font-weight: 400; color: #6b5b6e; }
+
+      /* 5 rename */
+      .files { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+      .files li { position: relative; height: 30px; border-radius: 8px; background: #faf6fd; }
+      .files span { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); white-space: nowrap; }
+      .files .old { color: #8a7a8f; animation: oldOut 5s ease infinite; animation-delay: calc(var(--i) * .6s); }
+      .files .new { font-weight: 700; opacity: 0; animation: newIn 5s ease infinite; animation-delay: calc(var(--i) * .6s); }
+      @keyframes oldOut { 0%, 20% { opacity: 1; } 35%, 100% { opacity: 0; } }
+      @keyframes newIn { 0%, 25% { opacity: 0; transform: translateY(-30%); } 40%, 100% { opacity: 1; transform: translateY(-50%); } }
+
+      /* 6 upload */
+      .term { background: #2b0d2c; color: #f3e8ff; border-color: transparent; }
+      .term .vis-head { color: #d8b9ff; }
+      .term pre { margin: 0 0 12px; font: inherit; line-height: 1.7; }
+      .term .c { color: #b388eb; }
+      .term .g { color: #4ade80; font-weight: 700; }
+      .term .bar { background: rgba(255,255,255,.15); }
+
+      /* 7 compliant */
+      .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+      .checks li { display: flex; justify-content: space-between; align-items: center; padding: 7px 10px; border-radius: 8px; background: #faf6fd; }
+      .checks u { text-decoration: none; font-weight: 700; color: #16a34a; opacity: 0; animation: goodIn 4s ease infinite; animation-delay: calc(var(--i) * .5s); }
+      @keyframes goodIn { 0%, 30% { opacity: 0; transform: scale(.5); } 50%, 100% { opacity: 1; transform: scale(1); } }
+
+      /* loop cap */
+      .loop {
+        position: relative;
+        margin-left: 64px;
+        display: flex; align-items: center; gap: 10px;
+        width: fit-content;
+        padding: 10px 18px;
+        border-radius: 90px;
+        background: #fff; color: #4a154b; font-weight: 700; font-size: 14px;
+        border: 1px solid rgba(74,21,75,.18);
+        box-shadow: 0 6px 18px rgba(74,21,75,.08);
+      }
+      @media (min-width: 900px) { .loop { margin: 0 auto; } }
+      .spin-slow { animation: spin 4s linear infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .vis *, .spin-slow { animation: none !important; }
+        .checks u { opacity: 1; }
+        .files .old { display: none; }
+        .files .new { opacity: 1; }
+        .stage-text, .stage-visual { opacity: 1; transition: none; }
+      }
     </style>
 
     <script>
@@ -422,6 +1229,95 @@ const profilePhoto = "/profile.jpg";
       sections.forEach((el) => ro.observe(el));
       window.addEventListener('resize', updateStickyOffsets);
       updateStickyOffsets();
+
+      // ---------- Progress bar + dot navigation ----------
+      const bar = document.getElementById('scroll-progress');
+      const navLinks = document.querySelectorAll<HTMLAnchorElement>('#dot-nav a');
+
+      // Where a section naturally starts in the page (ignores the sticky shift)
+      const naturalTop = (index: number) => {
+        let top = 0;
+        for (let i = 0; i < index; i++) top += sections[i].offsetHeight;
+        return top;
+      };
+
+      let ticking = false;
+
+      const updateScrollUI = () => {
+        ticking = false;
+
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = max > 0 ? window.scrollY / max : 0;
+        if (bar) bar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+
+        const probe = window.scrollY + window.innerHeight * 0.4;
+        let active = 0;
+        for (let i = 0; i < sections.length; i++) {
+          if (naturalTop(i) <= probe) active = i;
+        }
+        navLinks.forEach((link, i) => {
+          link.classList.toggle('is-active', i === active);
+          if (i === active) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+      };
+
+      const onScroll = () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateScrollUI);
+        }
+      };
+
+      navLinks.forEach((link, i) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: naturalTop(i), behavior: 'smooth' });
+        });
+      });
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      updateScrollUI();
+
+      // ---------- Automation pipeline: spine fill + stage activation ----------
+      const pipe = document.getElementById('pipe');
+      if (pipe) {
+        const pipeSection = pipe.closest('section');
+        const spine = pipe.querySelector<HTMLElement>('.spine');
+        const stages = Array.from(pipe.querySelectorAll<HTMLElement>('.stage'));
+        let pipeQueued = false;
+
+        const updatePipe = () => {
+          pipeQueued = false;
+          const vh = window.innerHeight;
+          // The "reading line" the spine follows. It sits at 55% of the screen, then
+          // slides to the bottom as the section reaches its pinned position, so the
+          // last stage always lights up before the next section covers it.
+          const secBottom = pipeSection ? pipeSection.getBoundingClientRect().bottom : vh;
+          const k = Math.min(1, Math.max(0, (vh * 1.5 - secBottom) / (vh * 0.5)));
+          const line = vh * 0.55 + vh * 0.45 * k;
+          const r = spine ? spine.getBoundingClientRect() : pipe.getBoundingClientRect();
+          const p = Math.min(1, Math.max(0, (line - r.top) / r.height));
+          pipe.style.setProperty('--p', String(p));
+
+          stages.forEach((s) => {
+            const n = s.querySelector('.node')!.getBoundingClientRect();
+            s.classList.toggle('reached', n.top + n.height / 2 < line);
+          });
+        };
+
+        const queuePipe = () => {
+          if (!pipeQueued) {
+            pipeQueued = true;
+            requestAnimationFrame(updatePipe);
+          }
+        };
+
+        window.addEventListener('scroll', queuePipe, { passive: true });
+        window.addEventListener('resize', queuePipe);
+        updatePipe();
+      }
     </script>
   </body>
 </html>
