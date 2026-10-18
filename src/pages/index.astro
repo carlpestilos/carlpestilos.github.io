@@ -1627,6 +1627,53 @@ hub.<span class="f">collect</span>(data);</pre>
       .hl-card > .hl-label { margin-bottom: 10px; }
       .hl-card > .bar { margin-top: auto; }
       .hl-strip.odd .hl-top { min-height: 44px; align-items: center; }
+
+      /* ---------- Highlight strips: one shared, in-sync animation cycle ----------
+         JS adds .anim (enables this), then toggles .play when the strip scrolls into view
+         and restarts it every cycle so every graphic in the strip starts and ends together. */
+      .hl-strip.anim:not(.play) *, .hl-strip.anim:not(.play) *::before, .hl-strip.anim:not(.play) *::after { animation-play-state: paused !important; }
+      .hl-strip.anim.reset *, .hl-strip.anim.reset *::before, .hl-strip.anim.reset *::after { animation: none !important; }
+
+      .hl-strip.anim .bar span,
+      .hl-strip.anim .bar span.to { animation: barCycle 6s both; transform-origin: left; }
+      .hl-strip.anim .bar span.to::after { animation: sheenCycle 6s both; }
+      .hl-strip.anim .prog-ring .rg-fg { animation: ringCycle 6s both; }
+      .hl-strip.anim .bars i { animation: barsCycle 6s both; animation-delay: calc(var(--i, 0) * .12s); }
+      .hl-strip.anim .dots i { animation: joinCycle 6s both; animation-delay: calc(var(--i, 0) * .14s); }
+      .hl-strip.anim .dots i.on { animation: none; }
+      .hl-strip.anim .dots.tally i { animation: tallyCycle 6s both; animation-delay: calc(var(--i, 0) * .15s); }
+
+      @keyframes barCycle {
+        0% { transform: scaleX(0); opacity: 1; animation-timing-function: cubic-bezier(.45, 0, .25, 1); }
+        45%, 86% { transform: scaleX(var(--w, 1)); opacity: 1; }
+        96%, 100% { transform: scaleX(var(--w, 1)); opacity: 0; }
+      }
+      @keyframes sheenCycle {
+        0%, 45% { transform: translateX(-100%); }
+        65%, 100% { transform: translateX(100%); }
+      }
+      @keyframes ringCycle {
+        0% { stroke-dashoffset: 100; opacity: 1; animation-timing-function: cubic-bezier(.45, 0, .25, 1); }
+        45%, 86% { stroke-dashoffset: var(--o); opacity: 1; }
+        96%, 100% { stroke-dashoffset: var(--o); opacity: 0; }
+      }
+      @keyframes barsCycle {
+        0% { transform: scaleY(.1); opacity: 1; animation-timing-function: cubic-bezier(.2, .8, .3, 1); }
+        30%, 86% { transform: scaleY(1); opacity: 1; }
+        96%, 100% { transform: scaleY(1); opacity: 0; }
+      }
+      @keyframes joinCycle {
+        0% { background: rgba(74, 21, 75, 0.12); transform: scale(.7); }
+        15% { background: #9b5de5; transform: scale(1.2); }
+        25%, 86% { background: #9b5de5; transform: scale(1); }
+        96%, 100% { background: rgba(74, 21, 75, 0.12); transform: scale(.7); }
+      }
+      @keyframes tallyCycle {
+        0% { background: rgba(74, 21, 75, 0.12); transform: scale(.7); }
+        10% { background: #9b5de5; transform: scale(1.3); }
+        20%, 86% { background: #4a154b; transform: scale(1); }
+        96%, 100% { background: rgba(74, 21, 75, 0.12); transform: scale(.7); }
+      }
     </style>
 
     <script>
@@ -1853,6 +1900,36 @@ hub.<span class="f">collect</span>(data);</pre>
           }, 2800);
         }
       });
+
+      // highlight strips: all graphics in a strip start together when it scrolls into view,
+      // and the whole strip restarts together every cycle
+      const strips = Array.from(document.querySelectorAll<HTMLElement>('.hl-strip'));
+      const CYCLE_MS = 7000;
+      if (strips.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        strips.forEach((el) => {
+          el.classList.add('anim');
+          let timer = 0;
+          const run = () => {
+            el.classList.remove('play');
+            el.classList.add('reset');
+            void el.offsetWidth;
+            el.classList.remove('reset');
+            el.classList.add('play');
+          };
+          new IntersectionObserver(
+            ([entry]) => {
+              window.clearInterval(timer);
+              if (entry.isIntersecting) {
+                run();
+                timer = window.setInterval(run, CYCLE_MS);
+              } else {
+                el.classList.remove('play');
+              }
+            },
+            { threshold: 0.35 }
+          ).observe(el);
+        });
+      }
 
       new ResizeObserver(measure).observe(document.body);
       sections.forEach((el) => new ResizeObserver(measure).observe(el));
