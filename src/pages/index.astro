@@ -1,0 +1,427 @@
+---
+// ---------------------------------------------------------------
+// PROFILE PICTURE: put your photo in the /public folder and set
+// the file name here. Example: public/profile.jpg  ->  "/profile.jpg"
+// A square image (at least 400x400) works best.
+// ---------------------------------------------------------------
+const profilePhoto = "/profile.jpg";
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carl Pestilos - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-canvas text-ink font-sans m-0 p-0 antialiased overflow-x-clip">
+
+    <!-- 1. HERO SECTION -->
+    <section data-stack style="z-index:1" class="hero-pastel-mesh w-full px-6 pt-32 pb-20 text-center flex flex-col items-center">
+      <div class="max-w-3xl mx-auto z-10 relative animate-fade-up">
+
+        <!-- ============ PROFILE PICTURE (edit `profilePhoto` at the top of this file) ============ -->
+        <div class="relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-8 rounded-full overflow-hidden border-4 border-white shadow-xl bg-canvas-lavender flex items-center justify-center">
+          <!-- Fallback initials, visible only if the image is missing -->
+          <span class="text-4xl md:text-5xl font-bold text-primary select-none">CP</span>
+          <img
+            src={profilePhoto}
+            alt="Portrait of Carl Pestilos"
+            class="absolute inset-0 w-full h-full object-cover"
+            onerror="this.style.display='none'"
+          />
+        </div>
+        <!-- ============ END PROFILE PICTURE ============ -->
+
+        <h1 class="text-5xl md:text-[64px] font-bold tracking-tight text-ink mb-6 leading-tight" style="letter-spacing: -0.768px;">Carl Pestilos</h1>
+        <p class="text-xl md:text-2xl mb-10 text-ink font-bold">Senior Accounting Operations Specialist | Workflow Automation</p>
+        
+        <p class="text-base text-ink-mute max-w-2xl mx-auto mb-12 leading-relaxed">
+          Detail-oriented professional specializing in optimizing financial operations for Homeowners Associations (HOAs) and automating complex workflows. Proven track record of mitigating collection fees, liens, and legal actions while preventing significant monthly late fees for clients.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="mailto:carlpestilos2@gmail.com" class="flex items-center justify-center gap-2 bg-primary text-on-primary font-bold text-base px-7 py-3.5 rounded-pill hover:bg-primary-press transition-all hover:scale-105 tracking-wide shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            CONTACT ME
+          </a>
+          <a href="https://linkedin.com/in/carl-pestilos/" target="_blank" class="flex items-center justify-center gap-2 bg-canvas border-2 border-primary text-primary font-bold text-base px-7 py-3.5 rounded-pill hover:bg-canvas-cream transition-all hover:scale-105 tracking-wide shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            LINKEDIN PROFILE
+          </a>
+        </div>
+      </div>
+      
+      <!-- Interactive Workflow Infographic -->
+      <div class="ui-mockup w-full max-w-5xl bg-canvas flex flex-col rounded-[16px] shadow-2xl relative z-10 overflow-hidden border border-gray-200 mt-4 animate-fade-up delay-1">
+         <div class="bg-surface-aubergine h-12 w-full flex items-center px-4 gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+            <span class="ml-4 text-white/70 font-mono text-xs flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              workflow_automation_pipeline.gs
+            </span>
+         </div>
+         
+         <div class="bg-canvas-lavender flex-grow flex flex-col items-center justify-center p-8 md:p-16 text-center">
+           <div class="flex flex-col md:flex-row items-center gap-6 md:gap-0 w-full max-w-4xl relative z-10">
+             <div class="bg-canvas p-6 rounded-xl shadow-md border border-gray-100 flex-1 w-full md:w-auto z-10">
+               <div class="w-12 h-12 bg-canvas-cream text-primary rounded-full flex items-center justify-center mb-4 mx-auto border border-gray-200">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+               </div>
+               <h4 class="font-bold text-primary mb-1">Raw HOA Data</h4>
+               <p class="text-xs text-ink-mute">6,000+ Properties</p>
+             </div>
+
+             <div class="flex flex-col items-center flex-1 w-full md:w-auto z-0 md:-mx-4 my-4 md:my-0">
+               <div class="hidden md:block h-1 w-full bg-primary/20 absolute top-1/2 -translate-y-1/2 left-0 right-0 -z-10"></div>
+               <div class="bg-primary text-on-primary px-5 py-2.5 rounded-pill text-sm font-bold shadow-lg whitespace-nowrap z-10 flex items-center gap-2">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                 Apps Script Pipeline
+               </div>
+               <p class="text-[11px] font-mono text-primary-tint mt-4 bg-primary/5 px-3 py-1.5 rounded-md hidden md:block border border-primary/10">bypass_importrange()</p>
+             </div>
+
+             <div class="bg-surface-aubergine p-6 rounded-xl shadow-md border border-gray-100 flex-1 w-full md:w-auto z-10">
+               <div class="w-12 h-12 bg-primary-press text-white rounded-full flex items-center justify-center mb-4 mx-auto border border-primary-tint">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+               </div>
+               <h4 class="font-bold text-on-primary mb-1">Central Hub</h4>
+               <p class="text-xs text-on-aubergine-mute">Auto-Synced Every 30m</p>
+             </div>
+           </div>
+
+           <div class="flex flex-col md:flex-row gap-8 md:gap-16 mt-12 pt-8 border-t border-primary/10 w-full justify-center">
+              <div class="text-center">
+                <span class="block text-4xl font-bold text-primary tracking-tight mb-1">$100k</span>
+                <span class="text-xs text-ink-mute font-bold uppercase tracking-wider">Monthly Fees Prevented</span>
+              </div>
+              <div class="text-center md:border-l md:border-primary/10 md:pl-16">
+                <span class="block text-4xl font-bold text-primary tracking-tight mb-1">80%</span>
+                <span class="text-xs text-ink-mute font-bold uppercase tracking-wider">Manual Entry Reduced</span>
+              </div>
+           </div>
+         </div>
+      </div>
+    </section>
+
+    <!-- 2. WORK EXPERIENCE SECTION -->
+    <section data-stack style="z-index:2" class="stack-card py-24 bg-canvas">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 text-ink flex items-center justify-center gap-3" style="letter-spacing: -0.256px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          Work Experience
+        </h2>
+        
+        <!-- Card 1: Senior Role -->
+        <div class="bg-surface-aubergine text-on-primary p-8 md:p-12 rounded-2xl mb-12 card-hover shadow-lg">
+          <div class="flex flex-col md:flex-row justify-between md:items-baseline mb-2">
+            <h3 class="text-3xl font-bold m-0 tracking-tight flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-on-aubergine-mute"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              Darwin Homes
+            </h3>
+            <span class="bg-primary-press px-4 py-1.5 rounded-pill text-white font-bold mt-4 md:mt-0 text-sm border border-primary-tint w-fit">Aug 2025 – Present</span>
+          </div>
+          <p class="text-xl text-on-aubergine-mute mb-8 border-b border-primary-tint pb-6">HOA Senior Accounting Specialist - Communications</p>
+          <ul class="space-y-4 text-base leading-relaxed text-on-primary">
+            <li class="flex items-start gap-3"><svg class="mt-1 flex-shrink-0 text-canvas-lavender" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Developed SOPs and improved processes to process prepayments for over 6,000 HOA-governed properties, preventing $100,000/month in potential late fees.</span></li>
+            <li class="flex items-start gap-3"><svg class="mt-1 flex-shrink-0 text-canvas-lavender" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Architected a data pipeline via Google Apps Script to bypass IMPORTRANGE limits, partitioning assignee datasets and auto-collecting every 30 mins.</span></li>
+            <li class="flex items-start gap-3"><svg class="mt-1 flex-shrink-0 text-canvas-lavender" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Scaled departmental operations from a 2-person initiative to a 9-person team, increasing team output by 30% and mentoring 4 members into permanent roles.</span></li>
+            <li class="flex items-start gap-3"><svg class="mt-1 flex-shrink-0 text-canvas-lavender" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Implemented data validation protocols securing a minimum 95% data entry accuracy rate and an 80% initial check clearance rate on complex HOA financial data.</span></li>
+            <li class="flex items-start gap-3"><svg class="mt-1 flex-shrink-0 text-canvas-lavender" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Automated HOA registrations by engineering an "Auto-Pull" UI, cutting manual data entry by over 80%.</span></li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Accounting Specialist Role -->
+        <div class="bg-canvas-cream text-ink p-8 md:p-12 rounded-2xl mb-12 card-hover border border-hairline shadow-sm">
+          <div class="flex flex-col md:flex-row justify-between md:items-baseline mb-2">
+            <h3 class="text-3xl font-bold text-primary m-0 tracking-tight flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-tint"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              Darwin Homes
+            </h3>
+            <span class="bg-canvas px-4 py-1.5 rounded-pill text-ink-mute font-bold mt-4 md:mt-0 text-sm border border-gray-200 w-fit">Aug 2024 – Aug 2025</span>
+          </div>
+          <p class="text-xl text-ink mb-8 border-b border-gray-200 pb-6">HOA Accounting Specialist - Communications</p>
+          <ul class="space-y-4 text-base leading-relaxed">
+            <li class="flex items-start gap-3"><svg class="mt-1 flex-shrink-0 text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Developed a custom Mail Merge system via Google Apps Script, dispatching thousands of individualized emails in 20 minutes (previously 80+ hours).</span></li>
+            <li class="flex items-start gap-3"><svg class="mt-1 flex-shrink-0 text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Managed the lifecycle of sensitive financial records by uploading 7,000+ critical HOA documents within two months, directly mitigating collection fees and liens.</span></li>
+            <li class="flex items-start gap-3"><svg class="mt-1 flex-shrink-0 text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Acted as primary point of escalation for complex account discrepancies to aggressively expedite the resolution of billing disputes.</span></li>
+            <li class="flex items-start gap-3"><svg class="mt-1 flex-shrink-0 text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Proactively engaged with HOAs via email and phone, maintaining meticulous records in the Communication Sheet to ensure accuracy.</span></li>
+          </ul>
+        </div>
+
+        <!-- Moonton Roles Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-canvas border border-gray-200 p-8 rounded-2xl card-hover flex flex-col shadow-sm">
+            <h3 class="text-2xl font-bold text-primary mb-1 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2" ry="2"></rect><path d="M6 12h4"></path><path d="M8 10v4"></path><path d="M15 13h.01"></path><path d="M18 11h.01"></path></svg>
+              Moonton
+            </h3>
+            <p class="font-bold text-base mb-1">Area Admin (Visayas)</p>
+            <p class="text-sm text-ink-mute mb-4 pb-4 border-b border-gray-100">Jan 2022 – Mar 2025</p>
+            <ul class="list-disc pl-4 text-sm space-y-2 text-ink">
+              <li>Programmed custom automation scripts eliminating 6 hours of weekly manual data entry.</li>
+              <li>Supervised and mentored moderators for large-scale user base initiatives.</li>
+              <li>Directed positive user engagement in high-traffic digital spaces.</li>
+            </ul>
+          </div>
+
+          <div class="bg-canvas border border-gray-200 p-8 rounded-2xl card-hover flex flex-col shadow-sm">
+            <h3 class="text-2xl font-bold text-primary mb-1 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2" ry="2"></rect><path d="M6 12h4"></path><path d="M8 10v4"></path><path d="M15 13h.01"></path><path d="M18 11h.01"></path></svg>
+              Moonton
+            </h3>
+            <p class="font-bold text-base mb-1">Moderator (Leyte)</p>
+            <p class="text-sm text-ink-mute mb-4 pb-4 border-b border-gray-100">Feb 2021 – Jan 2022</p>
+            <ul class="list-disc pl-4 text-sm space-y-2 text-ink">
+              <li>Managed guidelines to maintain a safe environment for thousands of members.</li>
+              <li>Supervised 12 monthly digital events, growing active user base from 826 to 1238 members in a month.</li>
+            </ul>
+          </div>
+
+          <div class="bg-canvas border border-gray-200 p-8 rounded-2xl card-hover flex flex-col shadow-sm">
+            <h3 class="text-2xl font-bold text-primary mb-1 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2" ry="2"></rect><path d="M6 12h4"></path><path d="M8 10v4"></path><path d="M15 13h.01"></path><path d="M18 11h.01"></path></svg>
+              Moonton
+            </h3>
+            <p class="font-bold text-base mb-1">Student Leader</p>
+            <p class="text-sm text-ink-mute mb-4 pb-4 border-b border-gray-100">Sep 2020 – Feb 2021</p>
+            <ul class="list-disc pl-4 text-sm space-y-2 text-ink">
+              <li>Developed automated workflow tools to coordinate volunteers, reducing setup time by 2 hours.</li>
+              <li>Facilitated community-building initiatives and events for local gaming interests.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SKILLS & ARSENAL SECTION -->
+    <section data-stack style="z-index:3" class="stack-card py-24 bg-canvas-cream border-t border-hairline">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 text-ink flex items-center justify-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          Skills & Capabilities
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-canvas p-8 md:p-12 rounded-2xl border border-hairline shadow-sm">
+          <!-- Tech Skills -->
+          <div>
+            <h3 class="text-[12px] font-bold tracking-[0.96px] text-ink-mute uppercase mb-6 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              Technical & Automation
+            </h3>
+            
+            <div class="mb-8">
+              <p class="text-sm font-bold text-primary mb-3">Scripting & Architecture</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill">Google Apps Script</span>
+                <span class="skill-pill">Workflow Automation</span>
+                <span class="skill-pill">Data Partitioning</span>
+                <span class="skill-pill">Spreadsheet Optimization</span>
+                <span class="skill-pill">Data Validation Protocols</span>
+              </div>
+            </div>
+            
+            <div>
+              <p class="text-sm font-bold text-primary mb-3">Tools</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill">Google Workspace</span>
+                <span class="skill-pill">Zendesk</span>
+                <span class="skill-pill">Adobe Creative Suite</span>
+                <span class="skill-pill">Microsoft Office</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ops Skills -->
+          <div>
+            <h3 class="text-[12px] font-bold tracking-[0.96px] text-ink-mute uppercase mb-6 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              Operations & Leadership
+            </h3>
+            
+            <div class="mb-8">
+              <p class="text-sm font-bold text-primary mb-3">Management & Admin</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill">Team Supervision & Mentorship</span>
+                <span class="skill-pill">SOP Development</span>
+                <span class="skill-pill">Scale-up Operations</span>
+                <span class="skill-pill">HOA Financial Reporting</span>
+                <span class="skill-pill">Dispute Resolution</span>
+                <span class="skill-pill">Document Lifecycle Management</span>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-sm font-bold text-primary mb-3">Community</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill">Engagement Strategy</span>
+                <span class="skill-pill">Event Coordination</span>
+                <span class="skill-pill">Content Creation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. EDUCATION & INTERESTS SECTION -->
+    <section data-stack style="z-index:4" class="stack-card pt-24 bg-canvas border-t border-hairline">
+      <div class="max-w-5xl mx-auto px-6 pb-24 flex flex-col lg:flex-row gap-12 lg:gap-16">
+        
+        <!-- Education Cards -->
+        <div class="flex-1">
+          <h2 class="text-3xl font-bold mb-8 text-ink tracking-tight flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            Education
+          </h2>
+          
+          <div class="bg-canvas border border-gray-200 p-8 rounded-2xl card-hover mb-6 relative overflow-hidden shadow-sm">
+            <div class="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+            <h3 class="text-xl font-bold text-primary mb-1">Leyte Normal University</h3>
+            <p class="font-bold text-ink mb-1">B.S. in Biology (Medical Biology)</p>
+            <p class="text-sm text-ink-mute mb-5 flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Tacloban City, Leyte &bull; July 2023
+            </p>
+            
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-canvas-cream text-ink text-xs font-bold px-3 py-1.5 rounded-pill border border-gray-200">Cum Laude (1.47 GPA)</span>
+              <span class="bg-canvas-cream text-ink text-xs font-bold px-3 py-1.5 rounded-pill border border-gray-200">Charles Darwin Award</span>
+              <span class="bg-canvas-cream text-ink text-xs font-bold px-3 py-1.5 rounded-pill border border-gray-200">Best in Case Study</span>
+              <span class="bg-canvas-cream text-ink text-xs font-bold px-3 py-1.5 rounded-pill border border-gray-200">Practicum Proficiency</span>
+            </div>
+          </div>
+
+          <div class="bg-canvas border border-gray-200 p-8 rounded-2xl card-hover relative overflow-hidden shadow-sm">
+            <div class="absolute top-0 left-0 w-2 h-full bg-canvas-lavender"></div>
+            <h3 class="text-xl font-bold text-primary mb-1">ACLC College of Tacloban</h3>
+            <p class="font-bold text-ink mb-1">ICT - Programming</p>
+            <p class="text-sm text-ink-mute mb-5 flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Tacloban City, Leyte &bull; April 2019
+            </p>
+            
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-canvas-cream text-ink text-xs font-bold px-3 py-1.5 rounded-pill border border-gray-200">With Honors</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests Cloud -->
+        <div class="flex-1">
+          <h2 class="text-3xl font-bold mb-8 text-ink tracking-tight flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            Interests
+          </h2>
+          <div class="bg-canvas-cream p-8 md:p-10 rounded-2xl border border-hairline h-fit">
+            <p class="text-ink-mute mb-8 text-base">Beyond workflows and pipelines, here is what keeps me engaged and inspired:</p>
+            
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Inclusivity</span>
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Technology</span>
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Biology</span>
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Community Dynamics</span>
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Innovation</span>
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Engagement</span>
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Games</span>
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Music</span>
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Films</span>
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Beaches</span>
+              <span class="bg-canvas text-primary font-bold px-5 py-2.5 rounded-pill shadow-sm text-sm border border-gray-200 hover:border-primary transition-colors cursor-default">Travel</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 5. FOOTER (lives inside the Education section, so it never covers it) -->
+      <footer class="stack-card bg-surface-aubergine py-24 px-6 text-center text-on-aubergine-mute border-t border-primary-tint">
+      <h2 class="text-4xl font-bold text-on-primary mb-8" style="letter-spacing: -0.6px;">Let's optimize your workflow.</h2>
+      <a href="mailto:carlpestilos2@gmail.com" class="inline-flex items-center justify-center gap-2 bg-canvas text-primary font-bold text-base px-8 py-4 rounded-pill mb-16 hover:bg-canvas-cream transition-transform hover:-translate-y-1 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        GET IN TOUCH
+      </a>
+      <p class="text-sm">&copy; 2026 Carl Pestilos.</p>
+      </footer>
+    </section>
+
+    <style>
+      .hero-pastel-mesh {
+        background-color: #f4ede4;
+        background-image: 
+          radial-gradient(circle at 0% 100%, rgba(255, 220, 230, 0.6) 0%, transparent 40%),
+          radial-gradient(circle at 100% 100%, rgba(200, 240, 255, 0.6) 0%, transparent 40%),
+          radial-gradient(circle at 50% 100%, rgba(233, 216, 255, 0.7) 0%, transparent 60%);
+      }
+      
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .animate-fade-up {
+        animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+      }
+      
+      .delay-1 { animation-delay: 0.15s; }
+      
+      .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: rgba(0,0,0,0.08) 0 12px 32px 0;
+      }
+
+      .skill-pill {
+        background-color: var(--color-canvas-lavender, #f9f0ff);
+        color: var(--color-primary-press, #611f69);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 6px 14px;
+        border-radius: 90px;
+        border: 1px solid rgba(74, 21, 75, 0.1);
+        transition: all 0.2s ease;
+        cursor: default;
+      }
+      .skill-pill:hover {
+        background-color: var(--color-primary, #4a154b);
+        color: white;
+      }
+
+      /* ---------- Stacking scroll effect ---------- */
+      [data-stack] {
+        position: sticky;
+        top: 0; /* overwritten per-section by the script below */
+      }
+
+      .stack-card {
+        border-top-left-radius: 32px;
+        border-top-right-radius: 32px;
+        box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.12);
+      }
+    </style>
+
+    <script>
+      // Sections taller than the screen stay in normal scroll until their bottom
+      // edge reaches the bottom of the viewport, then pin, so no text is ever
+      // covered before it has been seen. Shorter sections pin at the top.
+      const sections = document.querySelectorAll<HTMLElement>('[data-stack]');
+
+      const updateStickyOffsets = () => {
+        const vh = window.innerHeight;
+        sections.forEach((el) => {
+          el.style.top = `${Math.min(0, vh - el.offsetHeight)}px`;
+        });
+      };
+
+      const ro = new ResizeObserver(updateStickyOffsets);
+      sections.forEach((el) => ro.observe(el));
+      window.addEventListener('resize', updateStickyOffsets);
+      updateStickyOffsets();
+    </script>
+  </body>
+</html>
